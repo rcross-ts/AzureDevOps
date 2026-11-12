@@ -106,7 +106,7 @@ object AzureDevOpsUrlParser {
             }
 
             // Build the self-hosted server base URL (scheme + host + collection path)
-            val scheme = if (url.startsWith("https")) "https" else "http"
+            val scheme = if (url.startsWith("https") || url.startsWith("ssh")) "https" else "http"
             val selfHostedBaseUrl = if (collectionPath.isNotEmpty()) {
                 "$scheme://$host/$collectionPath"
             } else {
