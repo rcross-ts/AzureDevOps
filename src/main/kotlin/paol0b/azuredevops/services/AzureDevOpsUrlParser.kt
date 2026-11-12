@@ -37,7 +37,7 @@ object AzureDevOpsUrlParser {
     // https://[username@]server[:port][/path]/{collection}/{project}/_git/{repository}
     // The _git segment is the key marker for Azure DevOps Server repositories.
     private val SELF_HOSTED_PATTERN = Pattern.compile(
-        "https?://(?:[^@]+@)?([^/]+)(/[^_]+)?/([^/]+)/_git/([^/]+?)(?:\\.git)?/?$"
+        "(?:(?:ssh)|(?:https?))://(?:[^@]+@)?([^/:]+)(?::[0-9]+)?(/[^_]+)?/([^/]+)/_git/([^/]+?)(?:\\.git)?/?$"
     )
 
     /**
